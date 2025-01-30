@@ -1,5 +1,5 @@
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
 export default function Details() {
   const router = useRouter();
@@ -24,6 +24,10 @@ export default function Details() {
   //   Optional Chaining: params.name?.[0] намагається отримати перший елемент масиву, якщо params.name є масивом. Якщо params.name є undefined або null, результат буде undefined.
   //   Оператор нульового злиття: ?? 'Default Title' задає значення за замовчуванням, якщо результат з Optional Chaining є undefined.
 
+  const handleDismissAll = () => {
+    router.dismissAll();
+  };
+
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -38,6 +42,7 @@ export default function Details() {
       >
         Update the title
       </Text>
+      <Button title="Go to first screen" onPress={handleDismissAll} />
     </View>
   );
 }
@@ -47,5 +52,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    gap: 24,
   },
 });
