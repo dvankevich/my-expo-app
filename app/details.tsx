@@ -5,11 +5,14 @@ export default function Details() {
   const router = useRouter();
   const params = useLocalSearchParams();
 
+  // Приведення params.name до типу string
+  const title = Array.isArray(params.name) ? params.name[0] : params.name;
+
   return (
     <View style={styles.container}>
       <Stack.Screen
         options={{
-          title: params.name,
+          title: title, // Використання приведеного значення
         }}
       />
       <Text
