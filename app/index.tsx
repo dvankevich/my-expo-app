@@ -45,6 +45,11 @@ export default function Home() {
           <Text style={styles.buttonText}>Go to Settings</Text>
         </Link>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.buttonContainer}>
+        <Link href={{ pathname: "/user/[id]", params: { id: "123" } }}>
+          <Text style={styles.buttonText}>Go to User</Text>
+        </Link>
+      </TouchableOpacity>
     </View>
   );
 }

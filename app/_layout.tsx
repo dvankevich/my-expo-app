@@ -14,7 +14,7 @@ export default function Layout() {
       }}
     >
       <Stack.Screen
-        name="[profile]"
+        name="user/[id]"
         getId={({ params }) => String(Date.now())}
       />
     </Stack>
