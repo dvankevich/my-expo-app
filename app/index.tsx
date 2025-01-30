@@ -6,7 +6,14 @@ export default function Page() {
     <View>
       <Link href="/about">About</Link>
       {/* ...other links */}
-      <Link href="/user/bacon">View user</Link>
+      <Link
+        href={{
+          pathname: "/user/[id]",
+          params: { id: "bacon" },
+        }}
+      >
+        View user
+      </Link>
     </View>
   );
 }
