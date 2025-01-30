@@ -6,7 +6,14 @@ export default function Details() {
   const params = useLocalSearchParams();
 
   // Приведення params.name до типу string
-  const title = Array.isArray(params.name) ? params.name[0] : params.name;
+  // const title = Array.isArray(params.name) ? params.name[0] : params.name;
+  // Використання оператора нульового злиття для безпечного отримання рядка
+  const title =
+    typeof params.name === "string"
+      ? params.name
+      : Array.isArray(params.name)
+      ? params.name[0]
+      : "Default Title";
 
   return (
     <View style={styles.container}>
