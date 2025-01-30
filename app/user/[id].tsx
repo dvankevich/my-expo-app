@@ -1,12 +1,19 @@
-import { Pressable, Text } from "react-native";
-import { Link } from "expo-router";
+import { Button, View } from "react-native";
 
-export default function Page() {
+import { useRouter } from "expo-router";
+
+export default function Settings() {
+  const router = useRouter();
+
+  const handleDismiss = (count: number) => {
+    if (router.canDismiss()) {
+      router.dismiss(count);
+    }
+  };
+
   return (
-    <Link href="../" asChild>
-      <Pressable>
-        <Text>to Home from [id].tsx</Text>
-      </Pressable>
-    </Link>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Button title="Maybe dismiss" onPress={() => handleDismiss(5)} />
+    </View>
   );
 }
