@@ -20,6 +20,9 @@ export default function Details() {
     typeof params.name === "string"
       ? params.name
       : params.name?.[0] ?? "Default Title";
+  // Пояснення:
+  //   Optional Chaining: params.name?.[0] намагається отримати перший елемент масиву, якщо params.name є масивом. Якщо params.name є undefined або null, результат буде undefined.
+  //   Оператор нульового злиття: ?? 'Default Title' задає значення за замовчуванням, якщо результат з Optional Chaining є undefined.
 
   return (
     <View style={styles.container}>
