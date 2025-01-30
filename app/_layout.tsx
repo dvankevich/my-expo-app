@@ -12,6 +12,11 @@ export default function Layout() {
           fontWeight: "bold",
         },
       }}
-    />
+    >
+      <Stack.Screen
+        name="[profile]"
+        getId={({ params }) => String(Date.now())}
+      />
+    </Stack>
   );
 }
