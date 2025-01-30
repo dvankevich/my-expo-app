@@ -1,5 +1,12 @@
 import { Link, Stack } from "expo-router";
-import { Button, Text, Image, StyleSheet, View } from "react-native";
+import {
+  Button,
+  Text,
+  Image,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+} from "react-native";
 import { useState } from "react";
 
 function LogoTitle() {
@@ -28,9 +35,16 @@ export default function Home() {
         }}
       />
       <Text>Count: {count}</Text>
-      <Link href={{ pathname: "/details", params: { name: "Bacon" } }}>
-        Go to Details
-      </Link>
+      <TouchableOpacity style={styles.buttonContainer}>
+        <Link href={{ pathname: "/details", params: { name: "Bacon" } }}>
+          <Text style={styles.buttonText}>Go to Details</Text>
+        </Link>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.buttonContainer}>
+        <Link href={{ pathname: "/settings", params: { name: "Settings" } }}>
+          <Text style={styles.buttonText}>Go to Settings</Text>
+        </Link>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -44,5 +58,25 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
+  },
+  button: {
+    padding: 10,
+    backgroundColor: "#007BFF",
+    color: "#FFFFFF",
+    borderRadius: 5,
+    textAlign: "center",
+    marginVertical: 10,
+  },
+  buttonContainer: {
+    backgroundColor: "#FF5733", // Змініть колір на бажаний
+    borderRadius: 10,
+    paddingVertical: 15, // Збільшення відступу по вертикалі
+    paddingHorizontal: 30, // Збільшення відступу по горизонталі
+    marginVertical: 10,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 18, // Збільшення розміру шрифту
+    textAlign: "center",
   },
 });
