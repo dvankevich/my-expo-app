@@ -1,8 +1,8 @@
 # Welcome to your Expo app 👋
 
-## Nesting navigators
+## Modals
 
-example from https://docs.expo.dev/router/advanced/nesting-navigators/
+example from https://docs.expo.dev/router/advanced/modals/
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 

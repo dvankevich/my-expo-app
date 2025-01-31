@@ -1,13 +1,9 @@
-import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Home() {
+export default function Modal() {
   return (
     <View style={styles.container}>
-      <Text>Home screen</Text>
-      <Link href="/modal" style={styles.link}>
-        Open modal
-      </Link>
+      <Text>Modal screen</Text>
     </View>
   );
 }
@@ -17,9 +13,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  link: {
-    paddingTop: 20,
-    fontSize: 20,
   },
 });
