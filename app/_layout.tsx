@@ -1,22 +1,25 @@
 import { Stack } from "expo-router";
+import { LogBox } from "react-native";
+
+LogBox.ignoreLogs(['prop "getId" on screen']);
 
 export default function Layout() {
-  return (
-    <Stack
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#f4511e",
-        },
-        headerTintColor: "#fff",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-      }}
-    >
-      <Stack.Screen
-        name="user/[id]"
-        getId={({ params }) => String(Date.now())}
-      />
-    </Stack>
-  );
+    return (
+        <Stack
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: "#f4511e",
+                },
+                headerTintColor: "#fff",
+                headerTitleStyle: {
+                    fontWeight: "bold",
+                },
+            }}
+        >
+            <Stack.Screen
+                name="user/[id]"
+                getId={({ params }) => String(Date.now())}
+            />
+        </Stack>
+    );
 }
